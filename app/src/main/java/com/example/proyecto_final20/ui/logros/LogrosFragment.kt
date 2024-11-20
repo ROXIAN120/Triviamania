@@ -1,17 +1,15 @@
-package com.example.proyecto_final20.ui.gallery
+package com.example.proyecto_final20.ui.logros
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.proyecto_final20.databinding.FragmentGalleryBinding
+import com.example.proyecto_final20.databinding.FragmentLogrosBinding
 
-class GalleryFragment : Fragment() {
+class LogrosFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentLogrosBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,9 +22,8 @@ class GalleryFragment : Fragment() {
     ): View {
 
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentLogrosBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 

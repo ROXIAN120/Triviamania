@@ -16,10 +16,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyecto_final20.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_logros"
+        android:name="com.example.proyecto_final20.ui.logros.LogrosFragment"
         android:label="@string/menu_logros"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_logros" />
 
     <fragment
         android:id="@+id/nav_slideshow"
