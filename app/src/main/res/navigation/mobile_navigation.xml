@@ -9,17 +9,28 @@
         android:id="@+id/nav_home"
         android:name="com.example.proyecto_final20.ui.home.HomeFragment"
         android:label="@string/menu_pantalla_de_inicio"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nivel_facil"
+            app:destination="@id/nivel_facil" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.proyecto_final20.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_logros"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.proyecto_final20.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_datos_personales"
         tools:layout="@layout/fragment_slideshow" />
+
+
+    <activity
+        android:id="@+id/nivel_facil"
+        android:name="com.example.proyecto_final20.nivel_facil"
+        android:label="@string/menu_datos_personales"
+        tools:layout="@layout/activity_nivel_facil" />
 </navigation>

@@ -1,12 +1,9 @@
 package com.example.proyecto_final20
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import android.widget.Button
 import android.widget.TextView
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -28,6 +25,7 @@ class activity_pantalla_de_inicio : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityPantallaDeInicio2Binding
+    private val db = FirebaseFirestore.getInstance() // Inicializar Firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,28 +34,40 @@ class activity_pantalla_de_inicio : AppCompatActivity() {
         binding = ActivityPantallaDeInicio2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         // Ahora ya podemos acceder a los componentes de la vista
         val btn: Button = findViewById(R.id.button2)
         btn.setOnClickListener {
             val intent = Intent(this, nivel_facil::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             startActivity(intent)
         }
-
-        // Obtener el correo electrónico del usuario actualmente autenticado
-        val currentUser = FirebaseAuth.getInstance().currentUser
-        val userEmail = currentUser?.email
-
-        // Establecer el correo electrónico del usuario en el TextView del encabezado de la barra de navegación
+        // Obtener el encabezado de la barra de navegación
         val headerView = binding.navView.getHeaderView(0)
+        val userNameTextView: TextView = headerView.findViewById(R.id.Txt_nombre_usuario)
         val userEmailTextView: TextView = headerView.findViewById(R.id.Txt_correo)
-        userEmailTextView.text = userEmail
 
-        // Guardar el correo electrónico en SharedPreferences para persistencia de datos
-        val sharedPreferences = getSharedPreferences(getString(R.string.Guardar_datos), Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("email", userEmail ?: "") // Si userEmail es nulo, se guarda una cadena vacía
-        editor.apply()
+        // Obtener el correo electrónico del usuario
+        val user = FirebaseAuth.getInstance().currentUser
+        val userEmail = user?.email
+        userEmailTextView.text = userEmail ?: "Sin correo"
 
+        // Recuperar y mostrar el nombre del usuario desde Firestore
+        val userId = user?.uid
+        if (userId != null) {
+            db.collection("users").document(userId).get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val name = document.getString("name")
+                        userNameTextView.text = name ?: "Usuario"
+                    } else {
+                        userNameTextView.text = "Usuario"
+                    }
+                }
+                .addOnFailureListener {
+                    userNameTextView.text = "Error al cargar"
+                }
+        }
 
 
         // Resto de la configuración de la actividad
@@ -108,7 +118,6 @@ class activity_pantalla_de_inicio : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
 
 
     override fun onSupportNavigateUp(): Boolean {

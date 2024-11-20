@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,5 +8,147 @@
     tools:context=".nivel_facil">
 
 
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/animation2"
+      android:layout_width="456dp"
+      android:layout_height="894dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.977"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.503"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"
+      app:lottie_rawRes="@raw/animacion2" />
 
-  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/animation"
+      android:layout_width="204dp"
+      android:layout_height="169dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.492"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.154"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"
+      app:lottie_rawRes="@raw/preguntas" />
+
+  <TextView
+      android:id="@+id/contador"
+      android:layout_width="79dp"
+      android:layout_height="56dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginEnd="32dp"
+      android:background="@drawable/button_login"
+      android:fontFamily="@font/font2"
+      android:paddingStart="4dp"
+      android:paddingEnd="1dp"
+      android:text="50s"
+      android:textColor="@color/white"
+      android:textSize="35sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.044" />
+
+  <TextView
+      android:id="@+id/txtv_tp"
+      android:layout_width="389dp"
+      android:layout_height="61dp"
+      android:fontFamily="@font/font2"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:text="1. ¿Qué tipo de acceso tiene un miembro de clase marcado como private?
+"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.951" />
+
+  <LinearLayout
+      android:id="@+id/linearLayout2"
+      android:layout_width="381dp"
+      android:layout_height="227dp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.533"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/animation"
+      app:layout_constraintVertical_bias="0.485">
+
+
+    <Button
+        android:id="@+id/p1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:text="a) Puede ser accedido solo dentro de la misma clase
+
+"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="
+b) Puede ser accedido desde cualquier parte del código
+"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="c) Puede ser accedido desde cualquier clase en el mismo ensamblado
+
+"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="d) Puede ser accedido desde cualquier clase que herede de la clase original
+"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/button_exit"
+      android:layout_width="52dp"
+      android:layout_height="76dp"
+      android:src="@drawable/icon_atras"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.045"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.024" />
+</androidx.constraintlayout.widget.ConstraintLayout >

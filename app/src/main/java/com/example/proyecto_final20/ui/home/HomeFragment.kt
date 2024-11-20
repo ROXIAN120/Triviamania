@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.proyecto_final20.R
 import com.example.proyecto_final20.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -23,10 +25,13 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        // Navegar al fragmento de Resto Bar al hacer clic en el elemento de "restoBar"
+        binding.button2.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_nivel_facil,)
+        }
 
+        val root: View = binding.root
         return root
     }
 
