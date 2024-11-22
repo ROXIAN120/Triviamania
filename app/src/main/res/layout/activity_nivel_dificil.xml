@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".NivelIntermedio">
+
+
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/animation2"
+      android:layout_width="456dp"
+      android:layout_height="894dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.977"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.503"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"
+      app:lottie_rawRes="@raw/animacion2" />
+
+  <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/animation"
+      android:layout_width="204dp"
+      android:layout_height="169dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.238"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"
+      app:lottie_rawRes="@raw/preguntas" />
+
+  <TextView
+      android:id="@+id/contador"
+      android:layout_width="79dp"
+      android:layout_height="56dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginEnd="32dp"
+      android:background="@drawable/button_login"
+      android:fontFamily="@font/font2"
+      android:paddingStart="4dp"
+      android:paddingEnd="1dp"
+      android:text="50s"
+      android:textColor="@color/white"
+      android:textSize="35sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.044" />
+
+  <TextView
+      android:id="@+id/txtv_tp"
+      android:layout_width="397dp"
+      android:layout_height="66dp"
+      android:fontFamily="@font/font2"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
+      android:text=""
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.929" />
+
+  <LinearLayout
+      android:id="@+id/linearLayout2"
+      android:layout_width="381dp"
+      android:layout_height="227dp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/animation"
+      app:layout_constraintVertical_bias="0.597">
+
+
+    <Button
+        android:id="@+id/p1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/p4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/fondo_de_opciones"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/button_exit"
+      android:layout_width="52dp"
+      android:layout_height="76dp"
+      android:src="@drawable/icon_atras"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.045"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.024" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="181dp"
+      android:layout_height="31dp"
+      android:fontFamily="@font/font2"
+      android:text="Cantidad de puntos:"
+      android:paddingStart="7dp"
+      android:paddingEnd="5dp"
+      android:textColor="@color/white"
+      android:textSize="15sp"
+      app:layout_constraintBottom_toTopOf="@+id/animation"
+      app:layout_constraintEnd_toStartOf="@+id/contador"
+      app:layout_constraintHorizontal_bias="0.492"
+      app:layout_constraintStart_toEndOf="@+id/button_exit"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.291" />
+
+  <TextView
+      android:id="@+id/cantidad_de_puntos"
+      android:layout_width="138dp"
+      android:layout_height="47dp"
+      android:fontFamily="@font/font2"
+      android:text="Puntos: 0"
+      android:textColor="@color/white"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toTopOf="@+id/animation"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.815" />
+</androidx.constraintlayout.widget.ConstraintLayout >
